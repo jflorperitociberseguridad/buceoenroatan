@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roatán Dive Experience | Centro de Buceo en Honduras</title>
-    <meta name="description" content="Centro de buceo en Roatán, Honduras. Cursos PADI, inmersiones guiadas y experiencias submarinas en los arrecifes más espectaculares del Caribe.">
-    <meta name="keywords" content="buceo en Roatán, centro de buceo, inmersiones en Honduras, cursos PADI Roatán, snorkel Caribe">
+    <title>Roatán Dive Experience | Buceo en Honduras</title>
+    <meta name="description" content="Descubre el mejor buceo en Roatán. Cursos PADI, inmersiones y aventuras submarinas en el Caribe hondureño.">
+    <meta name="keywords" content="buceo en Roatán, PADI, inmersiones Caribe, centro de buceo, snorkel en Honduras">
     <meta name="author" content="Nombre del Estudiante">
 
     <link rel="stylesheet" href="styles.css">
@@ -13,110 +13,41 @@
 <body>
     <header>
         <h1>Roatán Dive Experience</h1>
-        <p>Descubre el mundo submarino del Caribe hondureño</p>
+        <p>Explora el mundo submarino en el corazón del Caribe</p>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- INICIO -->
+        <!-- SECCIÓN BIENVENIDA -->
         <section id="inicio">
-            <h2>Bucea en el paraíso</h2>
-            <p>Explora los arrecifes de coral, barcos hundidos y vida marina única en Roatán, con guías certificados y equipos de primera calidad.</p>
+            <h2>Bienvenido a tu próxima aventura submarina</h2>
+            <p>En Roatán Dive Experience te ofrecemos una experiencia inolvidable en el Caribe: inmersiones guiadas, cursos PADI y excursiones en uno de los arrecifes más impresionantes del mundo.</p>
         </section>
 
-        <!-- SOBRE NOSOTROS -->
-        <section id="sobre-nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>Somos un centro de buceo local con más de 10 años de experiencia en el Caribe. Ofrecemos cursos PADI, salidas diarias y atención personalizada.</p>
-        </section>
-
-        <!-- SERVICIOS -->
-        <section id="servicios">
-            <h2>Nuestros Servicios</h2>
-            <ul>
-                <li>
-                    <h3>Inmersiones Guiadas</h3>
-                    <p>Salidas diarias a los mejores puntos de buceo de Roatán, adaptadas a todos los niveles.</p>
-                </li>
-                <li>
-                    <h3>Cursos PADI</h3>
-                    <p>Desde bautismos de buceo hasta certificaciones avanzadas, con instructores certificados.</p>
-                </li>
-                <li>
-                    <h3>Snorkel Familiar</h3>
-                    <p>Excursiones en barco para disfrutar del arrecife sin necesidad de bucear con botella.</p>
-                </li>
-            </ul>
-        </section>
-
-        <!-- BLOG -->
-        <section id="blog">
-            <h2>Últimas Noticias del Mar</h2>
-            <div id="blog-entries">
-                <!-- Entradas dinámicas con JSON -->
+        <!-- SECCIÓN GALERÍA -->
+        <section id="galeria">
+            <h2>Galería de Imágenes</h2>
+            <div class="galeria">
+                <img src="img/buceo1.jpg" alt="Buceador en arrecife de Roatán">
+                <img src="img/buceo2.jpg" alt="Instructor PADI con grupo">
+                <img src="img/buceo3.jpg" alt="Vida marina en Roatán">
+                <img src="img/buceo4.jpg" alt="Snorkel familiar en aguas claras">
+                <img src="img/buceo5.jpg" alt="Barco hundido para bucear">
+                <img src="img/buceo6.jpg" alt="Atardecer desde el centro de buceo">
             </div>
-        </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form action="#" method="post">
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" required><br>
-                
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
-                
-                <label for="mensaje">Mensaje:</label><br>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br>
-                
-                <button type="submit">Enviar</button>
-            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Roatán Dive Experience - Buceo en Honduras con pasión y seguridad</p>
+        <p>&copy; 2025 Roatán Dive Experience - Buceo profesional en Honduras</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Roatán Dive Experience",
-  "image": "https://tusitio.com/img/logo.jpg",
-  "url": "https://tusitio.com",
-  "telephone": "+504 9999-9999",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "West End",
-    "addressLocality": "Roatán",
-    "addressRegion": "Islas de la Bahía",
-    "addressCountry": "HN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 16.3,
-    "longitude": -86.6
-  },
-  "openingHours": "Mo-Su 08:00-18:00",
-  "description": "Centro de buceo PADI en Roatán. Inmersiones, snorkel y experiencias únicas en el Caribe hondureño.",
-  "sameAs": [
-    "https://facebook.com/roatandiveexperience",
-    "https://instagram.com/roatandiveexperience"
-  ]
-}
-</script>
-
 </html>
