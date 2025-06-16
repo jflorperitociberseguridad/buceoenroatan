@@ -15,7 +15,24 @@
         transform: translateY(0);
     }
 }
+.hero {
+    background-image: url('img/hero-buceo.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem;
+    color: white;
+    text-align: center;
+}
 
+.hero .btn {
+    background-color: #00b4d8;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+}
 .blog-card {
     animation: fadeInUp 0.6s ease-out;
     animation-fill-mode: both;
