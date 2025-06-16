@@ -1,65 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Página Web</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-        }
-        footer {
-            background-color: #eee;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        a {
-            color: #004080;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Negocio Web - Inicio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #004080;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #002a5c;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2rem;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Bienvenido a mi Página Web</h1>
-        <p>Publicada con GitHub Pages</p>
-    </header>
+  <header>
+    <h1>Negocio Web</h1>
+    <p>Soluciones digitales adaptadas a ti</p>
+  </header>
 
-    <main>
-        <h2>Sobre mí</h2>
-        <p>Esta es una página de ejemplo publicada desde GitHub. Puedes personalizarla con tu contenido, tus enlaces o tu portfolio.</p>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-        <h2>Enlaces útiles</h2>
-        <ul>
-            <li><a href="https://github.com/">GitHub</a></li>
-            <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-        </ul>
-    </main>
+  <main>
+    <section id="inicio">
+      <h2>Bienvenidos</h2>
+      <p>Ofrecemos soluciones digitales profesionales para impulsar tu presencia en internet. Desde desarrollo web hasta posicionamiento SEO, trabajamos contigo para lograr resultados reales.</p>
+      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80" alt="Oficina moderna">
+    </section>
 
-    <footer>
-        &copy; 2025 | Desarrollado por [Tu Nombre]
-    </footer>
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Diseño Web</h3>
+          <p>Webs atractivas, adaptadas a móviles y con una experiencia de usuario óptima.</p>
+        </div>
+        <div class="card">
+          <h3>SEO y Posicionamiento</h3>
+          <p>Mejoramos tu visibilidad en buscadores para atraer tráfico cualificado.</p>
+        </div>
+        <div class="card">
+          <h3>Consultoría Digital</h3>
+          <p>Te guiamos en la transformación digital de tu negocio paso a paso.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos un equipo con pasión por la tecnología, el diseño y el crecimiento digital. Creemos en una comunicación clara y en soluciones centradas en las personas.</p>
+      <img src="https://images.unsplash.com/photo-1603575448362-979bd8b5ff06?auto=format&fit=crop&w=1000&q=80" alt="Equipo creativo">
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>¿Quieres saber más? Escríbenos a <strong>contacto@tudominio.com</strong> o síguenos en redes sociales.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 | Negocio Web | Desarrollado con GitHub Pages
+  </footer>
 
 </body>
 </html>
