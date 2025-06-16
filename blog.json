@@ -1,60 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Roatán Dive Experience</title>
-    <meta name="description" content="Artículos y consejos sobre buceo, snorkel y vida marina en Roatán, Honduras.">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Roatán Dive Experience</h1>
-        <p>Historias, consejos y aventuras submarinas</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>Últimos artículos del Blog</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="img/blog1.webp" alt="Buceo en Blue Channel">
-                    <div class="blog-content">
-                        <h3>Blue Channel: el arrecife más accesible</h3>
-                        <p>Una guía rápida para bucear en uno de los puntos más recomendados de Roatán.</p>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="img/blog2.webp" alt="Curso PADI en Roatán">
-                    <div class="blog-content">
-                        <h3>Cómo prepararte para tu primer curso PADI</h3>
-                        <p>Consejos prácticos para sentirte cómodo antes de tu primera inmersión.</p>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="img/blog3.webp" alt="Vida marina en Roatán">
-                    <div class="blog-content">
-                        <h3>Top 5 especies que verás buceando</h3>
-                        <p>Desde tortugas hasta morenas: descubre la fauna submarina local.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Roatán Dive Experience - Blog de buceo y naturaleza marina</p>
-    </footer>
-</body>
-</html>
+[
+  {
+    "titulo": "Descubre Blue Channel en Roatán",
+    "fecha": "2025-06-10",
+    "contenido": "Blue Channel es uno de los sitios de buceo más populares. Sus aguas cristalinas y vida marina lo convierten en una inmersión imprescindible."
+  },
+  {
+    "titulo": "¿Qué esperar de tu primer curso PADI?",
+    "fecha": "2025-06-05",
+    "contenido": "Si es tu primera vez bajo el agua, te contamos paso a paso lo que vivirás en tu curso de certificación Open Water Diver."
+  },
+  {
+    "titulo": "5 especies marinas que verás en Roatán",
+    "fecha": "2025-05-28",
+    "contenido": "Desde tortugas y rayas hasta barracudas y anguilas. Conoce las especies más comunes en nuestras inmersiones."
+  }
+]
