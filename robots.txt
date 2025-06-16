@@ -1,5 +1,4 @@
 User-agent: *
 Disallow:
 
-# Sitemap (añádelo cuando lo tengas)
-Sitemap: https://tusitio.com/sitemap.xml
+Sitemap: https://jflorperitociberseguridad.github.io/buceoenroatan/sitemap.xml
