@@ -4,6 +4,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+    opacity: 0; /* por defecto oculto hasta carga */
+}
 
 /* Tipografía y fondo general */
 body {
