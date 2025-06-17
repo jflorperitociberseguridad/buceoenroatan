@@ -1,1 +1,327 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título optimizado para SEO para la página de galería -->
+    <title>Galería de Buceo | Fotos y Videos | Roatán Dive Experience</title>
+    <meta name="description" content="Explora nuestra impresionante galería de fotos y videos del mundo submarino de Roatán, Utila y Cayos Cochinos.">
+    
+    <!-- Carga Tailwind CSS para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Estilos personalizados para las pestañas y el resto del diseño -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f7fa; /* Un azul muy claro para un ambiente oceánico */
+        }
+        /* Estilo para el botón de navegación móvil */
+        .hamburger-menu {
+            display: none; /* Oculto por defecto, visible en pantallas pequeñas */
+        }
+
+        /* Estilos para las "pestañas" de navegación en escritorio */
+        .nav-links ul li {
+            /* Colores de pestaña con un toque más metálico */
+            background-color: #004d40; /* Verde oscuro para las pestañas */
+            border-top-left-radius: 0.75rem; /* Esquinas redondeadas más pronunciadas */
+            border-top-right-radius: 0.75rem;
+            padding-bottom: 0;
+            margin-right: 0.35rem; /* Pequeño espacio entre pestañas */
+            border: 1px solid #00251a; /* Borde más oscuro para profundidad */
+            border-bottom: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra sutil para efecto 3D */
+        }
+
+        .nav-links ul li a {
+            /* Ajuste de padding para que las pestañas sean más compactas */
+            padding: 0.7rem 1rem; /* Padding más pequeño para que quepan más pestañas */
+            display: block;
+            color: #e0f2f7; /* Azul muy claro para el texto de la pestaña */
+            font-weight: 700; /* Más negrita */
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Sombra de texto para mejor legibilidad */
+            font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño para pestañas */
+        }
+
+        .nav-links ul li a:hover {
+            background-color: #00332c; /* Fondo más oscuro al pasar el ratón */
+            transform: translateY(-3px); /* Efecto de "levantar" la pestaña más pronunciado */
+            box-shadow: 0 -8px 16px rgba(0,0,0,0.2); /* Sombra más fuerte al hover */
+        }
+
+        /* Estilos para los botones CTA */
+        .btn {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 800; /* Botones más negrita */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            padding: 1rem 2.5rem; /* Padding generoso */
+            border-radius: 9999px; /* Totalmente redondeado */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: scale(1.08) translateY(-4px); /* Efecto de "levantar" más pronunciado */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        /* Ajustes para el contenedor de navegación en móvil */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block; /* Muestra el botón en móviles */
+            }
+            .nav-links {
+                display: none; /* Oculta la navegación por defecto en móviles */
+            }
+            .nav-links.active {
+                display: flex; /* Muestra la navegación cuando está activa */
+                flex-direction: column;
+                width: 100%;
+                background-color: #004d40; /* Fondo para el menú desplegado */
+                position: absolute;
+                top: 64px; /* Ajusta según la altura de tu header */
+                left: 0;
+                border-radius: 0 0 10px 10px;
+                padding-bottom: 10px;
+                border: none;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                margin-right: 0;
+                border-radius: 0;
+                border: none;
+            }
+            .nav-links li a {
+                display: block;
+                padding: 14px 16px; /* Ajusta el padding para móvil */
+                color: #e0f2f7;
+                border-radius: 5px;
+                font-weight: 700;
+                font-size: 1rem; /* Tamaño de fuente normal para móvil */
+            }
+            .nav-links li a:hover {
+                background-color: #00332c;
+            }
+        }
+
+        /* Estilos para la galería */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .gallery-item-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .gallery-item-info h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #004d40; /* Verde oscuro */
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-info p {
+            font-size: 0.9rem;
+            color: #4a5568; /* Gris oscuro */
+        }
+    </style>
+
+    <!-- Favicon y PWA (manteniendo los placeholders) -->
+    <link rel="icon" type="image/png" href="https://placehold.co/96x96/00796b/ffffff?text=Dive" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='90' text-anchor='middle' dominant-baseline='central'%3E🤿%3C/text%3E%3C/svg%3E" />
+    <link rel="shortcut icon" href="https://placehold.co/16x16/00796b/ffffff?text=D" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://placehold.co/180x180/00796b/ffffff?text=Dive" />
+    <link rel="manifest" href="/buceoenroatan/site.webmanifest" />
+</head>
+
+<body class="text-gray-800">
+    <!-- Encabezado de la página (igual que el index.html y otras páginas) -->
+    <header class="bg-gradient-to-r from-blue-800 to-teal-600 text-white p-4 shadow-lg relative rounded-b-lg">
+        <div class="container mx-auto flex flex-wrap md:flex-nowrap justify-between items-center">
+            <div class="flex-shrink-0 text-center md:text-left mb-4 md:mb-0 w-full md:w-auto">
+                <h1 class="text-4xl font-extrabold tracking-tight text-blue-100 drop-shadow-md">Roatán Dive Experience</h1>
+                <p class="text-lg text-teal-100 mt-1 drop-shadow-sm">Explora el paraíso submarino del Caribe</p>
+            </div>
+            <!-- Botón de menú de hamburguesa para móviles -->
+            <button id="hamburgerButton" class="hamburger-menu text-white focus:outline-none p-2 rounded-md absolute top-4 right-4 md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Navegación principal, estructurada como pestañas -->
+            <nav class="nav-links w-full md:w-auto md:flex md:justify-end">
+                <ul class="flex flex-wrap justify-center md:flex-nowrap md:space-x-1">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="ecomerce.html">Tienda online</a></li>
+                    <li><a href="galeria.html">Galería avanzada</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="mapasdebuceo.html">Mapa de puntos de buceo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-4 bg-white rounded-xl shadow-lg">
+        <h2 class="text-5xl font-extrabold text-center mb-10 text-blue-800 drop-shadow-md">Nuestra Galería Submarina</h2>
+        
+        <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">Sumérgete visualmente en las maravillas de Roatán, Utila y Cayos Cochinos a través de nuestra colección de fotos y videos.</p>
+
+        <!-- Sección de Galería de Imágenes -->
+        <section class="p-8 bg-gradient-to-r from-teal-50 to-teal-100 rounded-xl shadow-inner mb-12">
+            <h3 class="text-4xl font-bold text-teal-700 mb-6 text-center">Momentos Inolvidables Bajo el Agua</h3>
+            <div class="gallery-grid">
+                <!-- Ítem de Galería con imagen de Buceo 1 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/601/400/200" alt="Buceador observando peces en arrecife tropical">
+                    <div class="gallery-item-info">
+                        <h4>Exploración de Arrecifes</h4>
+                        <p>Descubriendo la biodiversidad de Roatán.</p>
+                    </div>
+                </div>
+                <!-- Ítem de Galería con imagen de Buceo 2 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/603/400/200" alt="Pez loro vibrante entre corales coloridos">
+                    <div class="gallery-item-info">
+                        <h4>Vida Marina Vibrante</h4>
+                        <p>Peces tropicales y corales en su hábitat natural.</p>
+                    </div>
+                </div>
+                <!-- Ítem de Galería con imagen de Buceo 3 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/605/400/200" alt="Buceador junto a una formación de coral gigante">
+                    <div class="gallery-item-info">
+                        <h4>Maravillas Submarinas</h4>
+                        <p>Imponentes estructuras de coral y grutas.</p>
+                    </div>
+                </div>
+                <!-- Ítem de Galería con imagen de Buceo 4 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/607/400/200" alt="Vista de un fondo marino azul profundo con rayos de sol">
+                    <div class="gallery-item-info">
+                        <h4>Paisajes Acuáticos</h4>
+                        <p>La inmensidad y belleza del océano.</p>
+                    </div>
+                </div>
+                <!-- Ítem de Galería con imagen de Buceo 5 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/609/400/200" alt="Buceadores nadando cerca de un banco de peces">
+                    <div class="gallery-item-info">
+                        <h4>Aventuras Grupales</h4>
+                        <p>Experiencias de buceo inolvidables con amigos.</p>
+                    </div>
+                </div>
+                <!-- Ítem de Galería con imagen de Buceo 6 -->
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/611/400/200" alt="Detalle de anémona con peces payaso">
+                    <div class="gallery-item-info">
+                        <h4>Biodiversidad Exótica</h4>
+                        <p>Criaturas fascinantes del fondo marino.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="btn bg-gradient-to-r from-teal-600 to-blue-500 text-white hover:from-teal-700 hover:to-blue-600 focus:ring-teal-300">Cargar Más Fotos</a>
+            </div>
+        </section>
+
+        <!-- Sección de Videos Destacados -->
+        <section class="p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-inner">
+            <h3 class="text-4xl font-bold text-blue-700 mb-6 text-center">Nuestros Videos Destacados</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video de Ejemplo 1 (YouTube Embed) - Video temático de buceo -->
+                <div class="video-item bg-white p-4 rounded-lg shadow-md border-b-4 border-blue-500">
+                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem;">
+                        <!-- Un video más apropiado para el buceo (ejemplo: National Geographic - Ocean) -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/aE64k6sUu1U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video del Mundo Submarino"></iframe>
+                    </div>
+                    <div class="video-info text-center mt-4">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-2">Explorando el Mundo Submarino</h4>
+                        <p class="text-gray-600 text-sm">Momentos capturados de la increíble vida bajo las olas.</p>
+                    </div>
+                </div>
+                <!-- Video de Ejemplo 2 (YouTube Embed) - Otro video temático de buceo/naturaleza -->
+                <div class="video-item bg-white p-4 rounded-lg shadow-md border-b-4 border-red-500">
+                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem;">
+                        <!-- Otro video más apropiado para el buceo (ejemplo: BBC Earth - Great Barrier Reef) -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/eI4an8aSzzw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Documental de Arrecifes"></iframe>
+                    </div>
+                    <div class="video-info text-center mt-4">
+                        <h4 class="text-xl font-semibold text-red-700 mb-2">La Vida en el Arrecife</h4>
+                        <p class="text-gray-600 text-sm">Documentando la magia y diversidad de los arrecifes de coral.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="btn bg-gradient-to-r from-fuchsia-600 to-pink-500 text-white hover:from-fuchsia-700 hover:to-pink-600 focus:ring-fuchsia-300">Ver Más Videos</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página (igual que las otras páginas) -->
+    <footer class="bg-gray-900 text-gray-200 text-center p-6 mt-12 rounded-t-lg shadow-inner">
+        <p class="text-sm">&copy; 2025 Roatán Dive Experience - Buceo profesional en el Caribe hondureño</p>
+    </footer>
+
+    <!-- Script de JavaScript para la interactividad del menú móvil (igual que las otras páginas) -->
+    <script>
+        const hamburgerButton = document.getElementById('hamburgerButton');
+        const navLinks = document.querySelector('.nav-links ul');
+
+        hamburgerButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!hamburgerButton.contains(event.target) && navLinks.classList.contains('active')) {
+                if (!navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
