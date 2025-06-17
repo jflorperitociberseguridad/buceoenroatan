@@ -3,60 +3,269 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicios | Roatán Dive Experience</title>
-    <meta name="description" content="Conoce todos los servicios de Roatán Dive Experience: inmersiones guiadas, cursos PADI, snorkel y aventuras submarinas para todos los niveles.">
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Título optimizado para SEO para la página de servicios -->
+    <title>Servicios de Buceo | Cursos PADI | Roatán Dive Experience</title>
+    <meta name="description" content="Descubre nuestros servicios de buceo en Roatán: cursos PADI certificados, inmersiones guiadas, y excursiones de snorkel para todos los niveles.">
+    
+    <!-- Carga Tailwind CSS para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- SCHEMA MARKUP (JSON-LD) para SEO - Adaptado para la página de servicios si fuera necesario, o mantén el de LocalBusiness general si ya está en el index -->
+    <!-- Por simplicidad, se mantiene el LocalBusiness general si ya está en el index.html. Puedes añadir Schema para Service aquí si lo deseas. -->
+    
+    <!-- Estilos personalizados para las pestañas y el video de fondo -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f7fa; /* Un azul muy claro para un ambiente oceánico */
+        }
+        /* Estilo para el botón de navegación móvil */
+        .hamburger-menu {
+            display: none; /* Oculto por defecto, visible en pantallas pequeñas */
+        }
+
+        /* Estilos para las "pestañas" de navegación en escritorio */
+        .nav-links ul li {
+            /* Colores de pestaña con un toque más metálico */
+            background-color: #004d40; /* Verde oscuro para las pestañas */
+            border-top-left-radius: 0.75rem; /* Esquinas redondeadas más pronunciadas */
+            border-top-right-radius: 0.75rem;
+            padding-bottom: 0;
+            margin-right: 0.35rem; /* Pequeño espacio entre pestañas */
+            border: 1px solid #00251a; /* Borde más oscuro para profundidad */
+            border-bottom: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra sutil para efecto 3D */
+        }
+
+        .nav-links ul li a {
+            padding: 0.85rem 1.25rem; /* Aumenta el padding para mayor área de clic */
+            display: block;
+            color: #e0f2f7; /* Azul muy claro para el texto de la pestaña */
+            font-weight: 700; /* Más negrita */
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Sombra de texto para mejor legibilidad */
+        }
+
+        .nav-links ul li a:hover {
+            background-color: #00332c; /* Fondo más oscuro al pasar el ratón */
+            transform: translateY(-3px); /* Efecto de "levantar" la pestaña más pronunciado */
+            box-shadow: 0 -8px 16px rgba(0,0,0,0.2); /* Sombra más fuerte al hover */
+        }
+
+        /* Estilos para los botones CTA */
+        .btn {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 800; /* Botones más negrita */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            padding: 1rem 2.5rem; /* Padding generoso */
+            border-radius: 9999px; /* Totalmente redondeado */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: scale(1.08) translateY(-4px); /* Efecto de "levantar" más pronunciado */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        /* Ajustes para el contenedor de navegación en móvil */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block; /* Muestra el botón en móviles */
+            }
+            .nav-links {
+                display: none; /* Oculta la navegación por defecto en móviles */
+            }
+            .nav-links.active {
+                display: flex; /* Muestra la navegación cuando está activa */
+                flex-direction: column;
+                width: 100%;
+                background-color: #004d40; /* Fondo para el menú desplegado */
+                position: absolute;
+                top: 64px; /* Ajusta según la altura de tu header */
+                left: 0;
+                border-radius: 0 0 10px 10px;
+                padding-bottom: 10px;
+                border: none;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                margin-right: 0;
+                border-radius: 0;
+                border: none;
+            }
+            .nav-links li a {
+                display: block;
+                padding: 14px 16px; /* Ajusta el padding para móvil */
+                color: #e0f2f7;
+                border-radius: 5px;
+                font-weight: 700;
+            }
+            .nav-links li a:hover {
+                background-color: #00332c;
+            }
+        }
+    </style>
+
+    <!-- Favicon y PWA (manteniendo los placeholders) -->
+    <link rel="icon" type="image/png" href="https://placehold.co/96x96/00796b/ffffff?text=Dive" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='90' text-anchor='middle' dominant-baseline='central'%3E🤿%3C/text%3E%3C/svg%3E" />
+    <link rel="shortcut icon" href="https://placehold.co/16x16/00796b/ffffff?text=D" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://placehold.co/180x180/00796b/ffffff?text=Dive" />
+    <link rel="manifest" href="/buceoenroatan/site.webmanifest" />
 </head>
-<body>
-    <header>
-        <h1>Roatán Dive Experience</h1>
-        <p>Sumérgete en la experiencia completa del Caribe</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+
+<body class="text-gray-800">
+    <!-- Encabezado de la página (igual que index.html) -->
+    <header class="bg-gradient-to-r from-blue-900 to-teal-700 text-white p-4 shadow-lg relative rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold">Roatán Dive Experience</h1>
+                <p class="text-blue-100 mt-1">Explora el paraíso submarino del Caribe</p>
+            </div>
+            <!-- Botón de menú de hamburguesa para móviles -->
+            <button id="hamburgerButton" class="hamburger-menu text-white focus:outline-none p-2 rounded-md">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Navegación principal, estructurada como pestañas -->
+            <nav class="nav-links md:flex space-x-6">
+                <ul class="flex md:space-x-2 flex-col md:flex-row">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="ecommerce.html">Tienda online</a></li>
+                    <li><a href="galeria-avanzada.html">Galería avanzada</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="mapa-puntos-buceo.html">Mapa de puntos de buceo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Servicios de Buceo y Aventura Marina</h2>
-            <p>En Roatán Dive Experience ofrecemos actividades pensadas para todos los niveles, desde principiantes hasta buceadores certificados.</p>
+    <main class="container mx-auto my-8 p-4 bg-white rounded-xl shadow-lg">
+        <h2 class="text-5xl font-extrabold text-center mb-10 text-blue-800 drop-shadow-md">Nuestros Servicios de Buceo y Snorkel</h2>
+        
+        <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">Ofrecemos una amplia gama de servicios adaptados a todos los niveles, desde tu primera inmersión hasta certificaciones avanzadas y exploraciones fascinantes.</p>
 
-            <ul>
-                <li>
-                    <h3>Inmersiones Guiadas</h3>
-                    <p>Organizamos salidas diarias en grupos reducidos a los principales puntos de buceo de Roatán. Nuestros guías conocen el arrecife como la palma de su mano.</p>
-                </li>
-                <li>
-                    <h3>Cursos PADI</h3>
-                    <p>Certifícate como buceador con nuestros instructores. Ofrecemos desde cursos de iniciación hasta especialidades como buceo nocturno y profundo.</p>
-                </li>
-                <li>
-                    <h3>Snorkel para Todos</h3>
-                    <p>Excursiones en barco para quienes quieren disfrutar del fondo marino desde la superficie. Ideal para familias o quienes prefieren no bucear con botella.</p>
-                </li>
-                <li>
-                    <h3>Paquetes Personalizados</h3>
-                    <p>¿Viajas en grupo o buscas una experiencia exclusiva? Diseñamos paquetes adaptados a tus necesidades: días de inmersión, formación, alojamiento y más.</p>
-                </li>
-                <li>
-                    <h3>Alquiler de Equipos</h3>
-                    <p>Disponemos de equipos completos y revisados: trajes, reguladores, jackets, aletas, máscaras, linternas y cámaras submarinas.</p>
-                </li>
-            </ul>
-
-            <h3>Horarios y Recomendaciones</h3>
-            <p>Nuestras salidas se realizan entre las 8:00 y las 16:00 h. Recomendamos reservar con antelación, especialmente en temporada alta.</p>
+        <!-- Sección de Cursos PADI -->
+        <section class="mb-12 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-inner">
+            <h3 class="text-4xl font-bold text-blue-700 mb-6 text-center">Cursos de Certificación PADI</h3>
+            <p class="text-lg text-gray-800 mb-6 text-center">Desde principiantes hasta profesionales, obtén tu certificación PADI con nuestros instructores expertos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tarjeta de Curso Open Water -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500">
+                    <img src="https://placehold.co/400x250/2196f3/ffffff?text=PADI+Open+Water" alt="Curso PADI Open Water" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-blue-700 mb-2">PADI Open Water Diver</h4>
+                    <p class="text-gray-600 mb-4">¡Tu primer paso bajo el agua! Aprende las bases del buceo en un entorno seguro y divertido.</p>
+                    <a href="reservas.html" class="inline-block bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors text-sm">Más Información</a>
+                </div>
+                <!-- Tarjeta de Curso Advanced Open Water -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-teal-500">
+                    <img src="https://placehold.co/400x250/009688/ffffff?text=PADI+Advanced+Open+Water" alt="Curso PADI Advanced Open Water" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-teal-700 mb-2">PADI Advanced Open Water Diver</h4>
+                    <p class="text-gray-600 mb-4">Mejora tus habilidades y explora nuevas especialidades de buceo como navegación o buceo profundo.</p>
+                    <a href="reservas.html" class="inline-block bg-teal-600 text-white font-bold py-2 px-6 rounded-full hover:bg-teal-700 transition-colors text-sm">Más Información</a>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="contacto.html" class="btn bg-gradient-to-r from-blue-600 to-teal-500 text-white hover:from-blue-700 hover:to-teal-600 focus:ring-blue-300">Ver Todos los Cursos</a>
+            </div>
         </section>
+
+        <!-- Sección de Inmersiones Guiadas -->
+        <section class="mb-12 p-8 bg-gradient-to-r from-green-50 to-green-100 rounded-xl shadow-inner">
+            <h3 class="text-4xl font-bold text-green-700 mb-6 text-center">Inmersiones Guiadas en Roatán</h3>
+            <p class="text-lg text-gray-800 mb-6 text-center">Descubre los mejores puntos de buceo de Roatán con nuestros guías locales expertos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta de Inmersión Diurna -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-green-500">
+                    <img src="https://placehold.co/400x250/8bc34a/ffffff?text=Inmersión+Diurna" alt="Inmersión Diurna en Roatán" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-green-700 mb-2">Inmersiones Diurnas</h4>
+                    <p class="text-gray-600 mb-4">Explora arrecifes vibrantes y naufragios históricos bajo la luz del sol.</p>
+                    <a href="reservas.html" class="inline-block bg-green-600 text-white font-bold py-2 px-6 rounded-full hover:bg-green-700 transition-colors text-sm">Reserva Ahora</a>
+                </div>
+                <!-- Tarjeta de Inmersión Nocturna -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-purple-500">
+                    <img src="https://placehold.co/400x250/9c27b0/ffffff?text=Inmersión+Nocturna" alt="Inmersión Nocturna en Roatán" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-purple-700 mb-2">Inmersiones Nocturnas</h4>
+                    <p class="text-gray-600 mb-4">Experimenta el arrecife bajo una luz completamente nueva y descubre criaturas nocturnas.</p>
+                    <a href="reservas.html" class="inline-block bg-purple-600 text-white font-bold py-2 px-6 rounded-full hover:bg-purple-700 transition-colors text-sm">Reserva Ahora</a>
+                </div>
+                <!-- Tarjeta de Descubre el Buceo -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-red-500">
+                    <img src="https://placehold.co/400x250/ef5350/ffffff?text=Descubre+el+Buceo" alt="Descubre el Buceo Roatán" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-red-700 mb-2">Descubre el Buceo (DSD)</h4>
+                    <p class="text-gray-600 mb-4">Para quienes quieren probar el buceo sin un curso completo, guiados por un instructor.</p>
+                    <a href="reservas.html" class="inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-full hover:bg-red-700 transition-colors text-sm">¡Prueba Ya!</a>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="mapa-puntos-buceo.html" class="btn bg-gradient-to-r from-red-600 to-orange-500 text-white hover:from-red-700 hover:to-orange-600 focus:ring-red-300">Explora Puntos de Buceo</a>
+            </div>
+        </section>
+
+        <!-- Sección de Snorkel y Excursiones -->
+        <section class="p-8 bg-gradient-to-r from-pink-50 to-red-100 rounded-xl shadow-inner">
+            <h3 class="text-4xl font-bold text-red-700 mb-6 text-center">Snorkel y Excursiones</h3>
+            <p class="text-lg text-gray-800 mb-6 text-center">Disfruta de la superficie del arrecife o explora las islas con nuestras excursiones.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tarjeta de Snorkel -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-pink-500">
+                    <img src="https://placehold.co/400x250/e91e63/ffffff?text=Snorkel+Roatán" alt="Tour de Snorkel Roatán" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-pink-700 mb-2">Tours de Snorkel</h4>
+                    <p class="text-gray-600 mb-4">Explora los jardines de coral poco profundos y la vida marina desde la superficie.</p>
+                    <a href="reservas.html" class="inline-block bg-pink-600 text-white font-bold py-2 px-6 rounded-full hover:bg-pink-700 transition-colors text-sm">Reserva tu Aventura</a>
+                </div>
+                <!-- Tarjeta de Excursiones en Barco -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-orange-500">
+                    <img src="https://placehold.co/400x250/ff9800/ffffff?text=Excursiones+en+Barco" alt="Excursiones en Barco Roatán" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h4 class="text-2xl font-semibold text-orange-700 mb-2">Excursiones en Barco Privadas</h4>
+                    <p class="text-gray-600 mb-4">Personaliza tu día en el mar con paradas en playas, snorkel y paisajes impresionantes.</p>
+                    <a href="contacto.html" class="inline-block bg-orange-600 text-white font-bold py-2 px-6 rounded-full hover:bg-orange-700 transition-colors text-sm">Contáctanos</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Roatán Dive Experience - Servicios de buceo con calidad y seguridad</p>
+    <!-- Pie de página (igual que index.html) -->
+    <footer class="bg-gray-900 text-gray-200 text-center p-6 mt-12 rounded-t-lg shadow-inner">
+        <p class="text-sm">&copy; 2025 Roatán Dive Experience - Buceo profesional en el Caribe hondureño</p>
     </footer>
+
+    <!-- Script de JavaScript para la interactividad del menú móvil (igual que index.html) -->
+    <script>
+        const hamburgerButton = document.getElementById('hamburgerButton');
+        const navLinks = document.querySelector('.nav-links ul');
+
+        hamburgerButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!hamburgerButton.contains(event.target) && navLinks.classList.contains('active')) {
+                if (!navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
