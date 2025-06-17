@@ -10,7 +10,7 @@
     <!-- Carga Tailwind CSS para un estilo moderno y responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuración de la fuente Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Estilos personalizados para las pestañas y el resto del diseño -->
     <style>
@@ -38,12 +38,14 @@
         }
 
         .nav-links ul li a {
-            padding: 0.85rem 1.25rem; /* Aumenta el padding para mayor área de clic */
+            /* Ajuste de padding para que las pestañas sean más compactas */
+            padding: 0.7rem 1rem; /* Padding más pequeño para que quepan más pestañas */
             display: block;
             color: #e0f2f7; /* Azul muy claro para el texto de la pestaña */
             font-weight: 700; /* Más negrita */
             text-align: center;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Sombra de texto para mejor legibilidad */
+            font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño para pestañas */
         }
 
         .nav-links ul li a:hover {
@@ -103,6 +105,7 @@
                 color: #e0f2f7;
                 border-radius: 5px;
                 font-weight: 700;
+                font-size: 1rem; /* Tamaño de fuente normal para móvil */
             }
             .nav-links li a:hover {
                 background-color: #00332c;
@@ -129,30 +132,31 @@
 </head>
 
 <body class="text-gray-800">
-    <!-- Encabezado de la página (igual que las otras páginas) -->
-    <header class="bg-gradient-to-r from-blue-900 to-teal-700 text-white p-4 shadow-lg relative rounded-b-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
-                <h1 class="text-3xl font-bold">Roatán Dive Experience</h1>
-                <p class="text-blue-100 mt-1">Explora el paraíso submarino del Caribe</p>
+    <!-- Encabezado de la página (igual que el index.html y otras páginas) -->
+    <header class="bg-gradient-to-r from-blue-800 to-teal-600 text-white p-4 shadow-lg relative rounded-b-lg">
+        <div class="container mx-auto flex flex-wrap md:flex-nowrap justify-between items-center">
+            <div class="flex-shrink-0 text-center md:text-left mb-4 md:mb-0 w-full md:w-auto">
+                <h1 class="text-4xl font-extrabold tracking-tight text-blue-100 drop-shadow-md">Roatán Dive Experience</h1>
+                <p class="text-lg text-teal-100 mt-1 drop-shadow-sm">Explora el paraíso submarino del Caribe</p>
             </div>
             <!-- Botón de menú de hamburguesa para móviles -->
-            <button id="hamburgerButton" class="hamburger-menu text-white focus:outline-none p-2 rounded-md">
+            <button id="hamburgerButton" class="hamburger-menu text-white focus:outline-none p-2 rounded-md absolute top-4 right-4 md:hidden">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
             <!-- Navegación principal, estructurada como pestañas -->
-            <nav class="nav-links md:flex space-x-6">
-                <ul class="flex md:space-x-2 flex-col md:flex-row">
+            <nav class="nav-links w-full md:w-auto md:flex md:justify-end">
+                <ul class="flex flex-wrap justify-center md:flex-nowrap md:space-x-1">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="ecommerce.html">Tienda online</a></li>
-                    <li><a href="galeria-avanzada.html">Galería avanzada</a></li>
+                    <li><a href="ecomerce.html">Tienda online</a></li>
+                    <li><a href="galeria.html">Galería avanzada</a></li>
                     <li><a href="calendario.html">Calendario</a></li>
                     <li><a href="reservas.html">Reservas</a></li>
-                    <li><a href="mapa-puntos-buceo.html">Mapa de puntos de buceo</a></li>
+                    <li><a href="mapasdebuceo.html">Mapa de puntos de buceo</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li> <!-- NUEVO: Enlace a Testimonios -->
                 </ul>
             </nav>
         </div>
