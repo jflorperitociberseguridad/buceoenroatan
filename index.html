@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Título optimizado para SEO para la página de galería -->
-    <title>Galería de Buceo | Fotos y Videos | Roatán Dive Experience</title>
-    <meta name="description" content="Explora nuestra impresionante galería de fotos y videos del mundo submarino de Roatán, Utila y Cayos Cochinos.">
+    <!-- Título optimizado para SEO para la página de testimonios -->
+    <title>Testimonios | Opiniones de Buceo | Roatán Dive Experience</title>
+    <meta name="description" content="Lee las opiniones y experiencias de nuestros clientes en Roatán Dive Experience. Descubre por qué somos su elección para el buceo en Honduras.">
     
     <!-- Carga Tailwind CSS para un estilo moderno y responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -111,49 +111,58 @@
                 background-color: #00332c;
             }
         }
-
-        /* Estilos para la galería */
-        .gallery-grid {
+        
+        /* Estilos específicos para testimonios */
+        .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
-        .gallery-item {
+        .testimonial-card {
             background-color: white;
             border-radius: 0.75rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            overflow: hidden;
+            padding: 1.5rem;
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 250px; /* Altura mínima para consistencia */
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px) scale(1.02);
+        .testimonial-card:hover {
+            transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
             object-fit: cover;
-            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 1rem;
+            border: 3px solid #29b6f6; /* Borde azul vibrante */
         }
 
-        .gallery-item-info {
-            padding: 1rem;
-            text-align: center;
+        .testimonial-card p.quote {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.5;
         }
 
-        .gallery-item-info h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
+        .testimonial-card p.author {
+            font-weight: 700;
             color: #004d40; /* Verde oscuro */
-            margin-bottom: 0.5rem;
+            margin-top: auto; /* Empuja el autor hacia abajo */
         }
 
-        .gallery-item-info p {
-            font-size: 0.9rem;
-            color: #4a5568; /* Gris oscuro */
+        .testimonial-card .rating {
+            color: #FFD700; /* Color estrella dorada */
+            margin-bottom: 0.5rem;
         }
     </style>
 
@@ -184,110 +193,74 @@
                 <ul class="flex flex-wrap justify-center md:flex-nowrap md:space-x-1">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="ecomerce.html">Tienda online</a></li>
-                    <li><a href="galeria.html">Galería avanzada</a></li>
                     <li><a href="calendario.html">Calendario</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
                     <li><a href="mapasdebuceo.html">Mapa de puntos de buceo</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li> <!-- REORDENADO -->
+                    <li><a href="ecomerce.html">Tienda online</a></li> <!-- REORDENADO -->
+                    <li><a href="galeria.html">Galería avanzada</a></li> <!-- REORDENADO -->
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-colors font-bold ml-4">Acceso Usuarios</a></li> <!-- NUEVO BOTÓN -->
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto my-8 p-4 bg-white rounded-xl shadow-lg">
-        <h2 class="text-5xl font-extrabold text-center mb-10 text-blue-800 drop-shadow-md">Nuestra Galería Submarina</h2>
+        <h2 class="text-5xl font-extrabold text-center mb-10 text-blue-800 drop-shadow-md">Lo que Dicen Nuestros Clientes</h2>
         
-        <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">Sumérgete visualmente en las maravillas de Roatán, Utila y Cayos Cochinos a través de nuestra colección de fotos y videos.</p>
+        <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">La mejor prueba de nuestra pasión por el buceo y el servicio excepcional son las palabras de quienes han vivido la aventura con nosotros.</p>
 
-        <!-- Sección de Galería de Imágenes -->
+        <!-- Sección de Testimonios -->
         <section class="p-8 bg-gradient-to-r from-teal-50 to-teal-100 rounded-xl shadow-inner mb-12">
-            <h3 class="text-4xl font-bold text-teal-700 mb-6 text-center">Momentos Inolvidables Bajo el Agua</h3>
-            <div class="gallery-grid">
-                <!-- Ítem de Galería con imagen de Buceo 1 -->
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/id/601/400/200" alt="Buceador observando peces en arrecife tropical">
-                    <div class="gallery-item-info">
-                        <h4>Exploración de Arrecifes</h4>
-                        <p>Descubriendo la biodiversidad de Roatán.</p>
+            <h3 class="text-4xl font-bold text-teal-700 mb-6 text-center">Experiencias Reales, Aventuras Inolvidables</h3>
+            <div class="testimonial-grid">
+                <!-- Testimonio de Ejemplo 1 -->
+                <div class="testimonial-card border-b-4 border-blue-500">
+                    <img src="https://placehold.co/80x80/2196f3/ffffff?text=U1" alt="Avatar de Cliente 1">
+                    <p class="quote">"¡La mejor experiencia de buceo de mi vida! Los instructores son súper profesionales y te hacen sentir seguro. El arrecife de Roatán es espectacular."</p>
+                    <div class="rating">
+                        <span class="text-xl">⭐️⭐️⭐️⭐️⭐️</span>
                     </div>
+                    <p class="author">- Ana R., Madrid</p>
                 </div>
-                <!-- Ítem de Galería con imagen de Buceo 2 -->
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/id/603/400/200" alt="Pez loro vibrante entre corales coloridos">
-                    <div class="gallery-item-info">
-                        <h4>Vida Marina Vibrante</h4>
-                        <p>Peces tropicales y corales en su hábitat natural.</p>
+                <!-- Testimonio de Ejemplo 2 -->
+                <div class="testimonial-card border-b-4 border-green-500">
+                    <img src="https://placehold.co/80x80/4caf50/ffffff?text=U2" alt="Avatar de Cliente 2">
+                    <p class="quote">"Hice mi curso PADI Open Water aquí y fue increíble. Paciencia, conocimiento y un equipo que se preocupa de verdad por el medio ambiente marino."</p>
+                    <div class="rating">
+                        <span class="text-xl">⭐️⭐️⭐️⭐️⭐️</span>
                     </div>
+                    <p class="author">- Carlos M., Buenos Aires</p>
                 </div>
-                <!-- Ítem de Galería con imagen de Buceo 3 -->
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/id/605/400/200" alt="Buceador junto a una formación de coral gigante">
-                    <div class="gallery-item-info">
-                        <h4>Maravillas Submarinas</h4>
-                        <p>Imponentes estructuras de coral y grutas.</p>
+                <!-- Testimonio de Ejemplo 3 -->
+                <div class="testimonial-card border-b-4 border-red-500">
+                    <img src="https://placehold.co/80x80/f44336/ffffff?text=U3" alt="Avatar de Cliente 3">
+                    <p class="quote">"Las inmersiones nocturnas son una pasada. Vimos pulpos, cangrejos y una bioluminiscencia mágica. ¡Totalmente recomendado para buceadores avanzados!"</p>
+                    <div class="rating">
+                        <span class="text-xl">⭐️⭐️⭐️⭐️⭐️</span>
                     </div>
+                    <p class="author">- Sofía P., Ciudad de México</p>
                 </div>
-                <!-- Ítem de Galería con imagen de Buceo 4 -->
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/id/607/400/200" alt="Vista de un fondo marino azul profundo con rayos de sol">
-                    <div class="gallery-item-info">
-                        <h4>Paisajes Acuáticos</h4>
-                        <p>La inmensidad y belleza del océano.</p>
+                <!-- Testimonio de Ejemplo 4 -->
+                <div class="testimonial-card border-b-4 border-purple-500">
+                    <img src="https://placehold.co/80x80/9c27b0/ffffff?text=U4" alt="Avatar de Cliente 4">
+                    <p class="quote">"Mi excursión de snorkel fue perfecta. Los guías eran muy conocedores y nos llevaron a los mejores puntos. ¡La vida marina es impresionante!"</p>
+                    <div class="rating">
+                        <span class="text-xl">⭐️⭐️⭐️⭐️⭐️</span>
                     </div>
-                </div>
-                <!-- Ítem de Galería con imagen de Buceo 5 -->
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/id/609/400/200" alt="Buceadores nadando cerca de un banco de peces">
-                    <div class="gallery-item-info">
-                        <h4>Aventuras Grupales</h4>
-                        <p>Experiencias de buceo inolvidables con amigos.</p>
-                    </div>
-                </div>
-                <!-- Ítem de Galería con imagen de Buceo 6 -->
-                <div class="gallery-item">
-                    <img src="https://picsum.photos/id/611/400/200" alt="Detalle de anémona con peces payaso">
-                    <div class="gallery-item-info">
-                        <h4>Biodiversidad Exótica</h4>
-                        <p>Criaturas fascinantes del fondo marino.</p>
-                    </div>
+                    <p class="author">- David G., Bogotá</p>
                 </div>
             </div>
             <div class="text-center mt-10">
-                <a href="#" class="btn bg-gradient-to-r from-teal-600 to-blue-500 text-white hover:from-teal-700 hover:to-blue-600 focus:ring-teal-300">Cargar Más Fotos</a>
+                <a href="contacto.html" class="btn bg-gradient-to-r from-teal-600 to-blue-500 text-white hover:from-teal-700 hover:to-blue-600 focus:ring-teal-300">Déjanos Tu Testimonio</a>
             </div>
         </section>
 
-        <!-- Sección de Videos Destacados -->
-        <section class="p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-inner">
-            <h3 class="text-4xl font-bold text-blue-700 mb-6 text-center">Nuestros Videos Destacados</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video de Ejemplo 1 (YouTube Embed) - Video temático de buceo -->
-                <div class="video-item bg-white p-4 rounded-lg shadow-md border-b-4 border-blue-500">
-                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem;">
-                        <!-- Un video más apropiado para el buceo (ejemplo: National Geographic - Ocean) -->
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/aE64k6sUu1U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video del Mundo Submarino"></iframe>
-                    </div>
-                    <div class="video-info text-center mt-4">
-                        <h4 class="text-xl font-semibold text-blue-700 mb-2">Explorando el Mundo Submarino</h4>
-                        <p class="text-gray-600 text-sm">Momentos capturados de la increíble vida bajo las olas.</p>
-                    </div>
-                </div>
-                <!-- Video de Ejemplo 2 (YouTube Embed) - Otro video temático de buceo/naturaleza -->
-                <div class="video-item bg-white p-4 rounded-lg shadow-md border-b-4 border-red-500">
-                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem;">
-                        <!-- Otro video más apropiado para el buceo (ejemplo: BBC Earth - Great Barrier Reef) -->
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/eI4an8aSzzw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Documental de Arrecifes"></iframe>
-                    </div>
-                    <div class="video-info text-center mt-4">
-                        <h4 class="text-xl font-semibold text-red-700 mb-2">La Vida en el Arrecife</h4>
-                        <p class="text-gray-600 text-sm">Documentando la magia y diversidad de los arrecifes de coral.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-10">
-                <a href="#" class="btn bg-gradient-to-r from-fuchsia-600 to-pink-500 text-white hover:from-fuchsia-700 hover:to-pink-600 focus:ring-fuchsia-300">Ver Más Videos</a>
-            </div>
+        <!-- Sección de CTA (Opcional, para animar a más testimonios o reservas) -->
+        <section class="p-8 bg-gradient-to-r from-red-50 to-red-100 rounded-xl shadow-inner text-center">
+            <h3 class="text-4xl font-bold text-red-700 mb-6">¿Listo para Crear Tu Propia Historia de Buceo?</h3>
+            <p class="text-lg text-gray-700 mb-8">Únete a la familia de Roatán Dive Experience y descubre por qué somos la opción favorita de tantos buceadores.</p>
+            <a href="reservas.html" class="btn bg-gradient-to-r from-fuchsia-600 to-pink-500 text-white hover:from-fuchsia-700 hover:to-pink-600 focus:ring-fuchsia-300">¡Reserva Tu Aventura Ahora!</a>
         </section>
 
     </main>
