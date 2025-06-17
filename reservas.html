@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título optimizado para SEO para la página de reservas -->
+    <title>Reservar Buceo en Roatán | Cursos PADI | Inmersiones Guiadas | Roatán Dive Experience</title>
+    <meta name="description" content="Reserva fácilmente tus cursos de buceo PADI, inmersiones guiadas o excursiones de snorkel en Roatán. ¡Asegura tu plaza hoy!">
+    
+    <!-- Carga Tailwind CSS para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Estilos personalizados para las pestañas y el resto del diseño -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f7fa; /* Un azul muy claro para un ambiente oceánico */
+        }
+        /* Estilo para el botón de navegación móvil */
+        .hamburger-menu {
+            display: none; /* Oculto por defecto, visible en pantallas pequeñas */
+        }
+
+        /* Estilos para las "pestañas" de navegación en escritorio */
+        .nav-links ul li {
+            /* Colores de pestaña con un toque más metálico */
+            background-color: #004d40; /* Verde oscuro para las pestañas */
+            border-top-left-radius: 0.75rem; /* Esquinas redondeadas más pronunciadas */
+            border-top-right-radius: 0.75rem;
+            padding-bottom: 0;
+            margin-right: 0.35rem; /* Pequeño espacio entre pestañas */
+            border: 1px solid #00251a; /* Borde más oscuro para profundidad */
+            border-bottom: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra sutil para efecto 3D */
+        }
+
+        .nav-links ul li a {
+            padding: 0.85rem 1.25rem; /* Aumenta el padding para mayor área de clic */
+            display: block;
+            color: #e0f2f7; /* Azul muy claro para el texto de la pestaña */
+            font-weight: 700; /* Más negrita */
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Sombra de texto para mejor legibilidad */
+        }
+
+        .nav-links ul li a:hover {
+            background-color: #00332c; /* Fondo más oscuro al pasar el ratón */
+            transform: translateY(-3px); /* Efecto de "levantar" la pestaña más pronunciado */
+            box-shadow: 0 -8px 16px rgba(0,0,0,0.2); /* Sombra más fuerte al hover */
+        }
+
+        /* Estilos para los botones CTA */
+        .btn {
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 800; /* Botones más negrita */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            padding: 1rem 2.5rem; /* Padding generoso */
+            border-radius: 9999px; /* Totalmente redondeado */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: scale(1.08) translateY(-4px); /* Efecto de "levantar" más pronunciado */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        /* Ajustes para el contenedor de navegación en móvil */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block; /* Muestra el botón en móviles */
+            }
+            .nav-links {
+                display: none; /* Oculta la navegación por defecto en móviles */
+            }
+            .nav-links.active {
+                display: flex; /* Muestra la navegación cuando está activa */
+                flex-direction: column;
+                width: 100%;
+                background-color: #004d40; /* Fondo para el menú desplegado */
+                position: absolute;
+                top: 64px; /* Ajusta según la altura de tu header */
+                left: 0;
+                border-radius: 0 0 10px 10px;
+                padding-bottom: 10px;
+                border: none;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                margin-right: 0;
+                border-radius: 0;
+                border: none;
+            }
+            .nav-links li a {
+                display: block;
+                padding: 14px 16px; /* Ajusta el padding para móvil */
+                color: #e0f2f7;
+                border-radius: 5px;
+                font-weight: 700;
+            }
+            .nav-links li a:hover {
+                background-color: #00332c;
+            }
+        }
+    </style>
+
+    <!-- Favicon y PWA (manteniendo los placeholders) -->
+    <link rel="icon" type="image/png" href="https://placehold.co/96x96/00796b/ffffff?text=Dive" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='90' text-anchor='middle' dominant-baseline='central'%3E🤿%3C/text%3E%3C/svg%3E" />
+    <link rel="shortcut icon" href="https://placehold.co/16x16/00796b/ffffff?text=D" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://placehold.co/180x180/00796b/ffffff?text=Dive" />
+    <link rel="manifest" href="/buceoenroatan/site.webmanifest" />
+</head>
+
+<body class="text-gray-800">
+    <!-- Encabezado de la página (igual que las otras páginas) -->
+    <header class="bg-gradient-to-r from-blue-900 to-teal-700 text-white p-4 shadow-lg relative rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold">Roatán Dive Experience</h1>
+                <p class="text-blue-100 mt-1">Explora el paraíso submarino del Caribe</p>
+            </div>
+            <!-- Botón de menú de hamburguesa para móviles -->
+            <button id="hamburgerButton" class="hamburger-menu text-white focus:outline-none p-2 rounded-md">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Navegación principal, estructurada como pestañas -->
+            <nav class="nav-links md:flex space-x-6">
+                <ul class="flex md:space-x-2 flex-col md:flex-row">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="ecommerce.html">Tienda online</a></li>
+                    <li><a href="galeria-avanzada.html">Galería avanzada</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="mapa-puntos-buceo.html">Mapa de puntos de buceo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-4 bg-white rounded-xl shadow-lg">
+        <h2 class="text-5xl font-extrabold text-center mb-10 text-blue-800 drop-shadow-md">¡Reserva Tu Aventura Submarina en Roatán!</h2>
+        
+        <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">Utiliza nuestro formulario de reservas para asegurar tu plaza en nuestros cursos, inmersiones o excursiones. ¡Es fácil y rápido!</p>
+
+        <!-- Sección del Formulario de Reservas -->
+        <section class="p-8 bg-gradient-to-r from-teal-50 to-teal-100 rounded-xl shadow-inner">
+            <h3 class="text-4xl font-bold text-teal-700 mb-8 text-center">Completa tu Reserva</h3>
+            <form class="max-w-xl mx-auto space-y-6">
+                <!-- Tipo de Servicio -->
+                <div>
+                    <label for="serviceType" class="block text-gray-700 text-lg font-semibold mb-2">Tipo de Servicio:</label>
+                    <select id="serviceType" name="serviceType" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg bg-white">
+                        <option value="">Selecciona un servicio</option>
+                        <option value="openWater">Curso PADI Open Water Diver</option>
+                        <option value="advancedOpenWater">Curso PADI Advanced Open Water Diver</option>
+                        <option value="funDiveDay">Inmersión Guiada Diurna (Fun Dive)</option>
+                        <option value="funDiveNight">Inmersión Guiada Nocturna</option>
+                        <option value="dsd">Descubre el Buceo (DSD)</option>
+                        <option value="snorkelTour">Tour de Snorkel</option>
+                        <option value="privateBoat">Excursión en Barco Privada</option>
+                        <option value="other">Otro / Consulta</option>
+                    </select>
+                </div>
+
+                <!-- Nombre Completo -->
+                <div>
+                    <label for="fullName" class="block text-gray-700 text-lg font-semibold mb-2">Nombre Completo:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Tu nombre y apellido" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" required>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div>
+                    <label for="email" class="block text-gray-700 text-lg font-semibold mb-2">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="tu.email@ejemplo.com" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" required>
+                </div>
+
+                <!-- Fecha Deseada -->
+                <div>
+                    <label for="desiredDate" class="block text-gray-700 text-lg font-semibold mb-2">Fecha Deseada:</label>
+                    <input type="date" id="desiredDate" name="desiredDate" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" required>
+                </div>
+
+                <!-- Número de Participantes -->
+                <div>
+                    <label for="numParticipants" class="block text-gray-700 text-lg font-semibold mb-2">Número de Participantes:</label>
+                    <input type="number" id="numParticipants" name="numParticipants" min="1" value="1" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" required>
+                </div>
+
+                <!-- Nivel de Buceo (Opcional) -->
+                <div>
+                    <label for="diveLevel" class="block text-gray-700 text-lg font-semibold mb-2">Nivel de Buceo (si aplica):</label>
+                    <select id="diveLevel" name="diveLevel" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg bg-white">
+                        <option value="">No soy buceador certificado</option>
+                        <option value="openWater">PADI Open Water Diver</option>
+                        <option value="advancedOpenWater">PADI Advanced Open Water Diver</option>
+                        <option value="rescueDiver">PADI Rescue Diver</option>
+                        <option value="divemaster">PADI Divemaster</option>
+                        <option value="instructor">PADI Instructor</option>
+                    </select>
+                </div>
+
+                <!-- Mensaje Adicional -->
+                <div>
+                    <label for="message" class="block text-gray-700 text-lg font-semibold mb-2">Mensaje Adicional / Preguntas:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Cualquier información adicional, preferencias o preguntas..." class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"></textarea>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div class="text-center mt-8">
+                    <button type="submit" class="btn bg-gradient-to-r from-fuchsia-600 to-pink-500 text-white hover:from-fuchsia-700 hover:to-pink-600 focus:ring-fuchsia-300">Enviar Solicitud de Reserva</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección de Información Adicional sobre Reservas -->
+        <section class="mt-12 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-inner text-center">
+            <h3 class="text-4xl font-bold text-blue-700 mb-6">Proceso de Reserva y Contacto</h3>
+            <p class="text-lg text-gray-700 mb-4">Una vez que envíes tu solicitud, nuestro equipo se pondrá en contacto contigo en las próximas 24 horas para confirmar la disponibilidad y finalizar los detalles de tu reserva.</p>
+            <p class="text-lg text-gray-700 mb-6">Si tienes preguntas urgentes o prefieres hablar directamente con nosotros, no dudes en contactarnos:</p>
+            <a href="contacto.html" class="btn bg-gradient-to-r from-orange-500 to-red-600 text-white hover:from-orange-600 hover:to-red-700 focus:ring-orange-300">Ir a la Página de Contacto</a>
+        </section>
+
+    </main>
+
+    <!-- Pie de página (igual que las otras páginas) -->
+    <footer class="bg-gray-900 text-gray-200 text-center p-6 mt-12 rounded-t-lg shadow-inner">
+        <p class="text-sm">&copy; 2025 Roatán Dive Experience - Buceo profesional en el Caribe hondureño</p>
+    </footer>
+
+    <!-- Script de JavaScript para la interactividad del menú móvil (igual que las otras páginas) -->
+    <script>
+        const hamburgerButton = document.getElementById('hamburgerButton');
+        const navLinks = document.querySelector('.nav-links ul');
+
+        hamburgerButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!hamburgerButton.contains(event.target) && navLinks.classList.contains('active')) {
+                if (!navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Opcional: Validación básica del formulario (puedes expandirlo con JS más avanzado)
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Aquí puedes añadir lógica de validación de JavaScript antes de enviar el formulario
+            // Por ahora, solo es una prevención de envío si los campos requeridos no están llenos (HTML5)
+            // Para un envío real, necesitarías un backend (servidor) para procesar estos datos.
+            console.log('Formulario de reserva enviado (simulado).');
+            // event.preventDefault(); // Descomenta esta línea para evitar el envío real del formulario (útil para pruebas)
+        });
+    </script>
+</body>
+</html>
