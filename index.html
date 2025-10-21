@@ -1,334 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Título optimizado para SEO: más descriptivo e incluye palabras clave clave -->
-    <title>Buceo en Roatán | Cursos PADI | Inmersiones Guiadas | Roatán Dive Experience</title>
-    <!-- Meta descripción existente, que ya es muy buena para SEO -->
-    <meta name="description" content="Descubre el buceo en Roatán con instructores PADI y aventuras inolvidables en el arrecife del Caribe hondureño.">
-    
-    <!-- Carga Tailwind CSS para un estilo moderno y responsivo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buceo Javier | Cursos y Viajes de Buceo en el Mar Rojo</title>
+    <meta name="description" content="Explora el Mar Rojo con Buceo Javier. Cursos PADI, viajes de vida a bordo inolvidables y la mejor experiencia de buceo en Egipto.">
+    <meta name="keywords" content="buceo javier, buceo mar rojo, cursos padi egipto, vida a bordo mar rojo, viajes de buceo, tienda de buceo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuración de la fuente Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- SCHEMA MARKUP (JSON-LD) para SEO -->
-    <!-- Ayuda a los motores de búsqueda a entender mejor tu negocio y puede mejorar los Rich Snippets -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'ocean-deep': '#001F3F',
+                        'ocean-light': '#007BFF',
+                        'coral-red': '#FF4136',
+                        'sand': '#F4A261',
+                    }
+                }
+            }
+        }
+    </script>
     <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Roatán Dive Experience",
-      "image": "https://placehold.co/800x600/00796b/ffffff?text=Logo+Roatan+Dive",
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Buceo Javier",
+      "description": "Centro de buceo premium en Sharm El Sheikh, especializado en cursos PADI y viajes de vida a bordo en el Mar Rojo.",
+      "url": "https://www.buceojavier-example.com",
+      "telephone": "+20 123 456 7890",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Aquí tu dirección exacta en Roatán (ej. West End Main Street)",
-        "addressLocality": "Roatán",
-        "addressRegion": "Islas de la Bahía",
-        "postalCode": "34101", <!-- Reemplaza con el código postal de tu ubicación en Roatán si lo tienes -->
-        "addressCountry": "HN"
+        "streetAddress": "Naama Bay",
+        "addressLocality": "Sharm El Sheikh",
+        "addressCountry": "EG"
       },
-      "telephone": "+504 XXXX XXXX", <!-- Reemplaza con tu número de teléfono real -->
-      "email": "info@roatandiveexperience.com", <!-- Reemplaza con tu email real -->
-      "url": "https://www.tudominio.com", <!-- Reemplaza con el URL de tu sitio web real -->
-      "hasMap": "URL del mapa de Google Maps de tu ubicación", <!-- Opcional: URL a Google Maps de tu centro de buceo -->
-      "openingHours": "Mo-Su 08:00-17:00", <!-- Horario de apertura (ej. Lunes a Domingo de 8 AM a 5 PM) -->
-      "priceRange": "$$", <!-- Indica el rango de precios (ej. $, $$, $$$) -->
-      "sameAs": [
-        "URL de tu Facebook",
-        "URL de tu Instagram",
-        "URL de tu YouTube"
-      ],
-      "description": "Centro de buceo en Roatán que ofrece cursos PADI, inmersiones guiadas, y experiencias de snorkel en el arrecife mesoamericano."
+      "image": "https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg",
+      "priceRange": "$$$"
     }
     </script>
-    
-    <!-- Estilos personalizados para las pestañas y el video de fondo -->
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #e0f7fa; /* Un azul muy claro para un ambiente oceánico */
+        html { scroll-behavior: smooth; }
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff !important;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            width: 44px !important;
+            height: 44px !important;
         }
-        /* Estilo para el botón de navegación móvil */
-        .hamburger-menu {
-            display: none; /* Oculto por defecto, visible en pantallas pequeñas */
-        }
-
-        /* Estilos para las "pestañas" de navegación en escritorio */
-        .nav-links ul li {
-            /* Colores de pestaña con un toque más metálico */
-            background-color: #004d40; /* Verde oscuro para las pestañas */
-            border-top-left-radius: 0.75rem; /* Esquinas redondeadas más pronunciadas */
-            border-top-right-radius: 0.75rem;
-            padding-bottom: 0;
-            margin-right: 0.35rem; /* Pequeño espacio entre pestañas */
-            border: 1px solid #00251a; /* Borde más oscuro para profundidad */
-            border-bottom: none;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
-            box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra sutil para efecto 3D */
-        }
-
-        .nav-links ul li a {
-            /* Ajuste de padding para que las pestañas sean más compactas */
-            padding: 0.7rem 1rem; /* Padding más pequeño para que quepan más pestañas */
-            display: block;
-            color: #e0f2f7; /* Azul muy claro para el texto de la pestaña */
-            font-weight: 700; /* Más negrita */
-            text-align: center;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Sombra de texto para mejor legibilidad */
-            font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño para pestañas */
-        }
-
-        .nav-links ul li a:hover {
-            background-color: #00332c; /* Fondo más oscuro al pasar el ratón */
-            transform: translateY(-3px); /* Efecto de "levantar" la pestaña más pronunciado */
-            box-shadow: 0 -8px 16px rgba(0,0,0,0.2); /* Sombra más fuerte al hover */
-        }
-
-        /* Estilos para los botones CTA */
-        .btn {
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: 800; /* Botones más negrita */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            padding: 1rem 2.5rem; /* Padding generoso */
-            border-radius: 9999px; /* Totalmente redondeado */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .btn:hover {
-            transform: scale(1.08) translateY(-4px); /* Efecto de "levantar" más pronunciado */
-            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-        }
-
-
-        /* Ajustes para el contenedor de navegación en móvil */
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: block; /* Muestra el botón en móviles */
-            }
-            .nav-links {
-                display: none; /* Oculta la navegación por defecto en móviles */
-            }
-            .nav-links.active {
-                display: flex; /* Muestra la navegación cuando está activa */
-                flex-direction: column;
-                width: 100%;
-                background-color: #004d40; /* Fondo para el menú desplegado */
-                position: absolute;
-                top: 64px; /* Ajusta según la altura de tu header */
-                left: 0;
-                border-radius: 0 0 10px 10px;
-                padding-bottom: 10px;
-                border: none;
-                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            }
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-                margin-right: 0;
-                border-radius: 0;
-                border: none;
-            }
-            .nav-links li a {
-                display: block;
-                padding: 14px 16px; /* Ajusta el padding para móvil */
-                color: #e0f2f7;
-                border-radius: 5px;
-                font-weight: 700;
-                font-size: 1rem; /* Tamaño de fuente normal para móvil */
-            }
-            .nav-links li a:hover {
-                background-color: #00332c;
-            }
-            .hero {
-                height: 450px; /* Ajusta altura del hero en móviles */
-            }
-            .hero-texto h2 {
-                font-size: 3rem; /* Título más pequeño en móviles */
-            }
-            .hero-texto p {
-                font-size: 1.3rem; /* Texto más pequeño en móviles */
-            }
-        }
-
-        /* Estilos para la sección de fotos de buceo */
-        .diving-photos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .diving-photo-item {
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .diving-photo-item:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-        }
-
-        .diving-photo-item img {
-            width: 100%;
-            height: 180px; /* Altura fija para las fotos */
-            object-fit: cover;
-            display: block;
-        }
-
-        .diving-photo-caption {
-            background-color: #004d40; /* Fondo oscuro para el pie de foto */
-            color: white;
-            padding: 0.75rem;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem !important;
+            font-weight: bold;
         }
     </style>
-
-    <!-- Favicon y PWA (manteniendo los placeholders) -->
-    <link rel="icon" type="image/png" href="https://placehold.co/96x96/00796b/ffffff?text=Dive" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='90' text-anchor='middle' dominant-baseline='central'%3E🤿%3C/text%3E%3C/svg%3E" />
-    <link rel="shortcut icon" href="https://placehold.co/16x16/00796b/ffffff?text=D" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://placehold.co/180x180/00796b/ffffff?text=Dive" />
-    <link rel="manifest" href="/buceoenroatan/site.webmanifest" />
 </head>
-
-<body class="text-gray-800">
-    <!-- Encabezado de la página -->
-    <header class="bg-gradient-to-r from-blue-800 to-teal-600 text-white p-4 shadow-lg relative rounded-b-lg">
-        <div class="container mx-auto flex flex-wrap md:flex-nowrap justify-between items-center">
-            <div class="flex-shrink-0 text-center md:text-left mb-4 md:mb-0 w-full md:w-auto">
-                <h1 class="text-4xl font-extrabold tracking-tight text-blue-100 drop-shadow-md">Roatán Dive Experience</h1>
-                <p class="text-lg text-teal-100 mt-1 drop-shadow-sm">Explora el paraíso submarino del Caribe</p>
-            </div>
-            <!-- Botón de menú de hamburguesa para móviles -->
-            <button id="hamburgerButton" class="hamburger-menu text-white focus:outline-none p-2 rounded-md absolute top-4 right-4 md:hidden">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+<body class="bg-gray-50 font-inter text-gray-800">
+    <header class="bg-ocean-deep shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-white text-3xl font-bold">Buceo <span class="text-coral-red">Javier</span></a>
+            <button id="navToggle" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
-            <!-- Navegación principal, con orden y botón de acceso -->
-            <nav class="nav-links w-full md:w-auto md:flex md:justify-end">
-                <ul class="flex flex-wrap justify-center md:flex-nowrap md:space-x-1">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="calendario.html">Calendario</a></li>
-                    <li><a href="mapasdebuceo.html">Mapa de puntos de buceo</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li><a href="ecomerce.html">Tienda online</a></li>
-                    <li><a href="galeria.html">Galería avanzada</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <!-- Nuevo botón para acceso de usuarios -->
-                    <li><a href="login.html" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-colors font-bold ml-4">Acceso Usuarios</a></li>
-                </ul>
-            </nav>
-        </div>
+            <div id="navMenu" class="hidden lg:flex items-center space-x-4 text-lg">
+                <a href="que-hacemos.html" class="text-white hover:text-coral-red transition duration-300">Qué hacemos</a>
+                <a href="servicios.html" class="text-white hover:text-coral-red transition duration-300">Servicios</a>
+                <a href="viajes.html" class="text-white hover:text-coral-red transition duration-300">Viajes</a>
+                <a href="zonas-de-buceo.html" class="text-white hover:text-coral-red transition duration-300">Zonas de Buceo</a>
+                <a href="tienda.html" class="text-white hover:text-coral-red transition duration-300">Tienda</a>
+                <a href="blog.html" class="text-white hover:text-coral-red transition duration-300">Blog</a>
+                <a href="contacto.html" class="text-white hover:text-coral-red transition duration-300">Contacto</a>
+                <a href="login.html" class="bg-coral-red text-white py-2 px-4 rounded-md hover:bg-red-700 transition duration-300 text-lg">Login</a>
+            </div>
+        </nav>
     </header>
-
-    <main class="container mx-auto my-8 p-4">
-        <!-- HERO VISUAL con VIDEO de fondo -->
-        <section class="hero">
-            <!-- Video de fondo. Reemplaza este URL con tu propio video de buceo -->
-            <video autoplay loop muted playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-underwater-world-1823-large.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-            <div class="hero-texto max-w-3xl mx-auto">
-                <h2 class="mb-4">Tu Aventura Submarina te Espera</h2>
-                <p class="mb-8">Descubre la increíble vida marina de Roatán y crea recuerdos inolvidables con nosotros.</p>
-                <a href="reservas.html" class="btn bg-gradient-to-r from-fuchsia-600 to-pink-500 text-white rounded-full shadow-lg hover:from-fuchsia-700 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-fuchsia-300">¡Reserva tu Inmersión Hoy!</a>
+    <main>
+        <section class="relative h-[70vh] w-full">
+            <div class="swiper hero-slider h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide relative">
+                        <img src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover" alt="Tortuga marina sobre un arrecife del Mar Rojo" />
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-4">
+                            <h1 class="text-5xl md:text-6xl font-bold text-center leading-tight">Vive la Magia del Mar Rojo</h1>
+                            <p class="mt-4 text-xl md:text-2xl text-center">Inmersiones que recordarás toda la vida.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide relative">
+                        <img src="https://images.pexels.com/photos/1077755/pexels-photo-1077755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover" alt="Pez payaso en una anémona" />
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-4">
+                            <h1 class="text-5xl md:text-6xl font-bold text-center leading-tight">Descubre un Universo de Color</h1>
+                            <p class="mt-4 text-xl md:text-2xl text-center">Los arrecifes más vibrantes del mundo te esperan.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide relative">
+                        <img src="https://images.pexels.com/photos/3052725/pexels-photo-3052725.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover" alt="Buceadores descendiendo en una pared de coral" />
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-4">
+                            <h1 class="text-5xl md:text-6xl font-bold text-center leading-tight">Aventura en Cada Inmersión</h1>
+                            <p class="mt-4 text-xl md:text-2xl text-center">Explora pecios históricos y paredes vertiginosas.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide relative">
+                        <img src="https://images.pexels.com/photos/2285495/pexels-photo-2285495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover" alt="Barco de vida a bordo al atardecer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-4">
+                            <h1 class="text-5xl md:text-6xl font-bold text-center leading-tight">Tu Hogar en el Mar</h1>
+                            <p class="mt-4 text-xl md:text-2xl text-center">Nuestros viajes de vida a bordo te llevan más lejos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
-
-        <!-- Sección de Fotos de Buceo en la página de inicio -->
-        <section class="py-12 bg-white rounded-xl shadow-lg my-12">
-            <h3 class="text-4xl font-bold text-center mb-10 text-teal-700">Explora la Magia Submarina de Roatán</h3>
-            <div class="diving-photos-grid px-8">
-                <div class="diving-photo-item">
-                    <img src="https://picsum.photos/id/1015/400/250" alt="Buceador nadando entre peces de colores en un arrecife">
-                    <div class="diving-photo-caption">Vida Marina Abundante</div>
-                </div>
-                <div class="diving-photo-item">
-                    <img src="https://picsum.photos/id/1060/400/250" alt="Arrecife de coral saludable con diversas especies marinas">
-                    <div class="diving-photo-caption">Formaciones de Coral Vibrantes</div>
-                </div>
-                <div class="diving-photo-item">
-                    <img src="https://picsum.photos/id/1049/400/250" alt="Buceador explorando un naufragio submarino cubierto de corales">
-                    <div class="diving-photo-caption">Naufragios Misteriosos</div>
-                </div>
-                <div class="diving-photo-item">
-                    <img src="https://picsum.photos/id/1025/400/250" alt="Primer plano de un pez tropical en su hábitat natural">
-                    <div class="diving-photo-caption">Peces Exóticos y Coloridos</div>
-                </div>
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-ocean-deep mb-4">Bienvenido a Buceo Javier</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                    Con más de 15 años de experiencia guiando a buceadores por las maravillas del Mar Rojo, somos tu puerta de entrada a los arrecifes de coral más impresionantes del planeta. Desde los legendarios pecios del norte hasta los santuarios de tiburones del sur, te llevamos más allá de lo convencional.
+                </p>
             </div>
-            <div class="text-center mt-10">
-                <a href="galeria.html" class="btn bg-gradient-to-r from-blue-600 to-teal-500 text-white hover:from-blue-700 hover:to-teal-600 focus:ring-blue-300">Ver Galería Completa</a>
-            </div>
-        </section>
-
-
-        <!-- Sección VENTAJAS con colores más vibrantes y metálicos -->
-        <section class="ventajas bg-white p-10 rounded-xl shadow-lg my-12">
-            <h2 class="text-4xl font-bold text-center mb-10 text-blue-800">¿Por qué bucear con nosotros?</h2>
-            <div class="ventajas-grid grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="ventaja text-center p-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/96x96/2196f3/ffffff?text=🛡️" alt="Seguridad certificada para buceo" class="mx-auto mb-4 w-24 h-24 rounded-full p-2 bg-blue-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-800">Seguridad Certificada</h3>
-                    <p class="text-gray-700">Instructores con amplia experiencia y equipo revisado a diario para tu seguridad en cada inmersión.</p>
-                </div>
-                <div class="ventaja text-center p-6 bg-gradient-to-br from-green-100 to-green-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/96x96/4caf50/ffffff?text=🐠" alt="Arrecife Mesoamericano de Roatán" class="mx-auto mb-4 w-24 h-24 rounded-full p-2 bg-green-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-green-800">Arrecife Único</h3>
-                    <p class="text-gray-700">Roatán forma parte del segundo sistema de arrecifes más grande del mundo, hogar de una biodiversidad increíble.</p>
-                </div>
-                <div class="ventaja text-center p-6 bg-gradient-to-br from-red-100 to-red-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/96x96/f44336/ffffff?text=🤝" alt="Experiencia de buceo personalizada PADI" class="mx-auto mb-4 w-24 h-24 rounded-full p-2 bg-red-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-red-800">Experiencia Personalizada</h3>
-                    <p class="text-gray-700">Grupos pequeños y atención adaptada a tu nivel de buceo, desde principiantes hasta avanzados PADI.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección CTA (Llamada a la acción) con colores divertidos -->
-        <section class="cta bg-gradient-to-r from-orange-500 to-red-600 text-white text-center p-12 rounded-xl shadow-lg my-12">
-            <h3 class="text-4xl font-bold mb-6">¡No esperes más para tu próxima aventura submarina!</h3>
-            <a href="contacto.html" class="btn bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">Contacta para Bucear</a>
         </section>
     </main>
-
-    <!-- Pie de página -->
-    <footer class="bg-gray-900 text-gray-200 text-center p-6 mt-12 rounded-t-lg shadow-inner">
-        <p class="text-sm">&copy; 2025 Roatán Dive Experience - Buceo profesional en el Caribe hondureño</p>
+    <footer class="bg-ocean-deep text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Buceo <span class="text-coral-red">Javier</span></h3>
+                    <p class="text-gray-400">Tu aventura en el Mar Rojo. Compromiso con la seguridad, la excelencia y la conservación marina.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navegación</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="que-hacemos.html" class="hover:text-coral-red transition duration-300">Qué hacemos</a></li>
+                        <li><a href="viajes.html" class="hover:text-coral-red transition duration-300">Nuestros Viajes</a></li>
+                        <li><a href="zonas-de-buceo.html" class="hover:text-coral-red transition duration-300">Zonas de Buceo</a></li>
+                        <li><a href="blog.html" class="hover:text-coral-red transition duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Soporte</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="contacto.html" class="hover:text-coral-red transition duration-300">Contacto</a></li>
+                        <li><a href="testimonios.html" class="hover:text-coral-red transition duration-300">Testimonios</a></li>
+                        <li><a href="#" class="hover:text-coral-red transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacto</h3>
+                    <p class="text-gray-400">Naama Bay, Sharm El Sheikh, Egipto</p>
+                    <p class="text-gray-400">Email: contacto@buceojavier-example.com</p>
+                    <p class="text-gray-400">Teléfono: +20 123 456 7890</p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 Buceo Javier. Creado con pasión por el océano.</p>
+            </div>
+        </div>
     </footer>
-
-    <!-- Script de JavaScript para la interactividad del menú móvil -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const hamburgerButton = document.getElementById('hamburgerButton');
-        const navLinks = document.querySelector('.nav-links ul');
-
-        hamburgerButton.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
         });
-
-        document.addEventListener('click', (event) => {
-            if (!hamburgerButton.contains(event.target) && navLinks.classList.contains('active')) {
-                if (!navLinks.contains(event.target)) {
-                    navLinks.classList.remove('active');
-                }
-            }
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
-            });
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
         });
     </script>
 </body>
