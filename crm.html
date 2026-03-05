@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM | Roatán Dive Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Inter, sans-serif; background: linear-gradient(180deg, #e0f7fa 0%, #f7fdff 100%); }
+    .card { background: #fff; border-radius: 1rem; box-shadow: 0 10px 24px rgba(0, 77, 64, .12); }
+    .kpi { padding: 1rem; border-radius: .8rem; color: #fff; }
+    .kpi h3 { margin: 0; font-size: .95rem; opacity: .9; }
+    .kpi p { margin: .2rem 0 0; font-size: 2rem; font-weight: 700; }
+    .kpi-total { background: #00695c; }
+    .kpi-new { background: #0277bd; }
+    .kpi-follow { background: #6a1b9a; }
+    .kpi-closed { background: #2e7d32; }
+    table { width: 100%; border-collapse: collapse; min-width: 980px; }
+    th, td { padding: .75rem; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+    th { font-size: .85rem; color: #334155; background: #f8fafc; position: sticky; top: 0; }
+    .badge { display: inline-block; padding: .35rem .7rem; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+    .badge-new { background: #dbeafe; color: #1d4ed8; }
+    .badge-follow { background: #f3e8ff; color: #7e22ce; }
+    .badge-closed { background: #dcfce7; color: #15803d; }
+    .btn-small { border: 0; padding: .45rem .75rem; border-radius: .5rem; background: #0d9488; color: #fff; font-weight: 600; cursor: pointer; }
+    .btn-small:hover { filter: brightness(0.95); }
+    .btn-small.danger { background: #dc2626; }
+    .actions-cell { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .empty { text-align: center; color: #64748b; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="bg-teal-800 text-white px-6 py-4 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl font-extrabold">CRM de Clientes</h1>
+        <p class="text-teal-100 text-sm">Roatán Dive Experience · Gestión comercial de leads y reservas</p>
+      </div>
+      <a href="index.html" class="bg-white text-teal-800 px-4 py-2 rounded-lg font-semibold">← Volver al sitio</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 space-y-6">
+    <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="kpi kpi-total"><h3>Total contactos</h3><p id="kpiTotal">0</p></div>
+      <div class="kpi kpi-new"><h3>Nuevos</h3><p id="kpiNew">0</p></div>
+      <div class="kpi kpi-follow"><h3>En seguimiento</h3><p id="kpiFollowUp">0</p></div>
+      <div class="kpi kpi-closed"><h3>Cerrados</h3><p id="kpiClosed">0</p></div>
+    </section>
+
+    <section class="card p-5">
+      <h2 class="text-xl font-bold text-slate-800 mb-4">Registrar nuevo cliente</h2>
+      <form id="crmForm" class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <input name="nombre" required placeholder="Nombre completo" class="border rounded-lg px-3 py-2" />
+        <input name="email" type="email" required placeholder="Correo" class="border rounded-lg px-3 py-2" />
+        <input name="telefono" required placeholder="Teléfono" class="border rounded-lg px-3 py-2" />
+        <input name="interes" required placeholder="Interés (curso/tour)" class="border rounded-lg px-3 py-2" />
+        <select name="etapa" class="border rounded-lg px-3 py-2">
+          <option>Nuevo</option>
+          <option>Seguimiento</option>
+          <option>Cerrado</option>
+        </select>
+        <input name="fechaContacto" type="date" class="border rounded-lg px-3 py-2" />
+        <input name="notas" placeholder="Notas" class="border rounded-lg px-3 py-2 lg:col-span-2" />
+        <button class="bg-teal-700 text-white rounded-lg px-4 py-2 font-semibold hover:bg-teal-800">Guardar cliente</button>
+      </form>
+    </section>
+
+    <section class="card p-5">
+      <div class="flex flex-wrap gap-3 justify-between items-end mb-4">
+        <h2 class="text-xl font-bold text-slate-800">Pipeline comercial</h2>
+        <div class="flex gap-2 flex-wrap">
+          <input id="searchInput" placeholder="Buscar por nombre, correo..." class="border rounded-lg px-3 py-2" />
+          <select id="stageFilter" class="border rounded-lg px-3 py-2">
+            <option>Todos</option>
+            <option>Nuevo</option>
+            <option>Seguimiento</option>
+            <option>Cerrado</option>
+          </select>
+        </div>
+      </div>
+      <div class="overflow-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Interés</th>
+              <th>Etapa</th>
+              <th>Fecha</th>
+              <th>Notas</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="crmTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="crm.js"></script>
+</body>
+</html>
