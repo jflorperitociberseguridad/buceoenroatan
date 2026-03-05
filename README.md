@@ -39,3 +39,11 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 Reglas de Seguridad: Para un sistema de usuarios real, es CRÍTICO que configures las reglas de seguridad de Firebase Authentication y Firestore (si almacenas datos de usuario) para proteger tu base de datos. Consulta la documentación de Firebase para esto.Actualizar el Contenido:Imágenes y Videos: Reemplaza los placeholders de imágenes (https://picsum.photos/..., https://placehold.co/...) y los videos de ejemplo (https://assets.mixkit.co/..., https://www.youtube.com/embed/...) con tus propios activos de alta calidad para personalizar el sitio.Textos: Edita todo el texto para que refleje la información real de tu centro de buceo.Futuras Mejoras PotencialesImplementación Completa de Formularios: Conectar el formulario de contacto y el formulario de reservas a un backend real (ej. Firebase Functions, Node.js, PHP) para procesar los envíos.Galería Interactiva Avanzada: Implementar una galería con lightbox, filtros o categorías.Integración de API de Mapas Real: Usar la API de Google Maps o Mapbox para un mapa de puntos de buceo interactivo y personalizado con marcadores.Dashboard de Usuario: Crear una sección protegida para usuarios logueados para gestionar sus reservas o perfil.Funcionalidad de Tienda Online Completa: Integrar un carrito de compras y pasarela de pago.SEO Avanzado: Más optimizaciones de contenido, velocidad de carga y datos estructurados.Blog Dinámico: Un sistema para gestionar y mostrar publicaciones de blog.¡Esperamos que disfrutes de este proyecto y que "Roatán Dive Experience" sea un éxito en línea!
+
+
+## Blueprint CRM Enterprise-Grade
+Se añadió el documento `CRM_ENTERPRISE_BLUEPRINT.md` con una propuesta integral de arquitectura, datos, seguridad, automatizaciones, finanzas y roadmap para un CRM SaaS enterprise-grade.
+
+- `crm.html`                    # Prototipo funcional de CRM enterprise (pipeline, finanzas, Cmd+K)
+
+- `crm.js`                      # Lógica CRM (scoring, Kanban DnD, finanzas, integraciones, export, localStorage)

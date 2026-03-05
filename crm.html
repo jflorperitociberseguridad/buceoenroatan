@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Enterprise App | Buceo en Roatán</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { card: '#0b1220', line: '#1e293b', accent: '#22d3ee' } } }
+    }
+  </script>
+  <style>
+    .deal.dragging { opacity: .45; }
+    .kanban-column[data-stale="true"] { box-shadow: 0 0 0 1px #f59e0b inset; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <header class="sticky top-0 z-20 bg-slate-950/80 backdrop-blur border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <div>
+        <h1 class="text-lg font-semibold">CRM SaaS Enterprise</h1>
+        <p class="text-xs text-slate-400">Ventas · Soporte · Finanzas · Governance · Integraciones</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <select id="roleFilter" class="text-xs px-2 py-2 rounded bg-slate-900 border border-line">
+          <option value="admin">Rol: Admin</option>
+          <option value="manager">Rol: Manager</option>
+          <option value="sales">Rol: Comercial</option>
+        </select>
+        <button id="cmdButton" class="text-xs px-3 py-2 rounded bg-slate-900 border border-line hover:border-accent">⌘K</button>
+        <button id="saveState" class="text-xs px-3 py-2 rounded bg-slate-900 border border-line">Guardar</button>
+        <a href="index.html" class="text-xs px-3 py-2 rounded bg-cyan-500 text-slate-950 font-semibold">Volver</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-4 space-y-4">
+    <section class="grid md:grid-cols-6 gap-3 text-sm">
+      <div class="bg-card border border-line rounded-xl p-3"><p class="text-xs text-slate-400">MRR</p><p id="kpiMRR" class="text-xl font-semibold">$0</p></div>
+      <div class="bg-card border border-line rounded-xl p-3"><p class="text-xs text-slate-400">ARR</p><p id="kpiARR" class="text-xl font-semibold">$0</p></div>
+      <div class="bg-card border border-line rounded-xl p-3"><p class="text-xs text-slate-400">EBITDA</p><p id="kpiEBITDA" class="text-xl font-semibold">$0</p></div>
+      <div class="bg-card border border-line rounded-xl p-3"><p class="text-xs text-slate-400">ROI</p><p id="kpiROI" class="text-xl font-semibold">0%</p></div>
+      <div class="bg-card border border-line rounded-xl p-3"><p class="text-xs text-slate-400">Forecast vs cuota</p><p id="kpiForecast" class="text-xl font-semibold">$0 / $0</p></div>
+      <div class="bg-card border border-line rounded-xl p-3"><p class="text-xs text-slate-400">Stale deals</p><p id="kpiStale" class="text-xl font-semibold">0</p></div>
+    </section>
+
+    <section class="grid lg:grid-cols-3 gap-4">
+      <article class="bg-card border border-line rounded-xl p-4 space-y-3">
+        <h2 class="font-semibold">Leads + No-Code Fields</h2>
+        <form id="leadForm" class="space-y-2 text-sm">
+          <input required name="name" placeholder="Nombre" class="w-full bg-slate-900 border border-line rounded p-2">
+          <select name="industry" class="w-full bg-slate-900 border border-line rounded p-2">
+            <option value="ai">Agencia IA</option><option value="saas">SaaS</option><option value="ecommerce">Ecommerce</option>
+          </select>
+          <input required type="number" name="budget" min="0" placeholder="Presupuesto" class="w-full bg-slate-900 border border-line rounded p-2">
+          <input required type="number" name="behavior" min="0" max="100" placeholder="Intent (0-100)" class="w-full bg-slate-900 border border-line rounded p-2">
+          <input name="custom" placeholder="Campo custom: país=HN" class="w-full bg-slate-900 border border-line rounded p-2">
+          <button class="w-full p-2 rounded bg-cyan-500 text-slate-950 font-semibold">Crear lead + convertir</button>
+        </form>
+        <ul id="leadList" class="text-xs space-y-2 max-h-52 overflow-auto"></ul>
+      </article>
+
+      <article class="bg-card border border-line rounded-xl p-4 space-y-3 lg:col-span-2">
+        <div class="flex justify-between items-center">
+          <h2 class="font-semibold">Pipeline Kanban con control por rol</h2>
+          <div class="flex gap-2">
+            <button id="detectStale" class="text-xs px-3 py-1 rounded bg-slate-900 border border-line">Simular stale</button>
+            <button id="runWorkflow" class="text-xs px-3 py-1 rounded bg-slate-900 border border-line">Run IF-THEN</button>
+          </div>
+        </div>
+        <div id="kanban" class="grid md:grid-cols-5 gap-2 text-sm"></div>
+      </article>
+    </section>
+
+    <section class="grid lg:grid-cols-4 gap-4">
+      <article class="bg-card border border-line rounded-xl p-4 space-y-3">
+        <h2 class="font-semibold">Finanzas</h2>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <input id="subName" placeholder="Suscripción" class="bg-slate-900 border border-line rounded p-2">
+          <input id="subMrr" type="number" min="0" placeholder="MRR" class="bg-slate-900 border border-line rounded p-2">
+          <button id="addSub" class="col-span-2 p-2 rounded bg-cyan-500 text-slate-950 font-semibold">Añadir ingreso</button>
+          <input id="expenseName" placeholder="Gasto" class="bg-slate-900 border border-line rounded p-2">
+          <input id="expenseVal" type="number" min="0" placeholder="Costo" class="bg-slate-900 border border-line rounded p-2">
+          <button id="addExpense" class="col-span-2 p-2 rounded bg-slate-900 border border-line">Añadir gasto</button>
+        </div>
+        <ul id="financeList" class="text-xs space-y-1"></ul>
+      </article>
+
+      <article class="bg-card border border-line rounded-xl p-4 space-y-3">
+        <h2 class="font-semibold">Facturación recurrente</h2>
+        <button id="genInvoices" class="w-full p-2 rounded bg-slate-900 border border-line text-sm">Generar facturas del ciclo</button>
+        <button id="markOverdue" class="w-full p-2 rounded bg-slate-900 border border-line text-sm">Marcar vencidas + recordatorios</button>
+        <ul id="invoiceList" class="text-xs space-y-1 max-h-40 overflow-auto"></ul>
+      </article>
+
+      <article class="bg-card border border-line rounded-xl p-4 space-y-3">
+        <div class="flex justify-between items-center">
+          <h2 class="font-semibold">Integraciones</h2>
+          <button id="retryWebhook" class="text-xs px-3 py-1 rounded bg-slate-900 border border-line">Retry</button>
+        </div>
+        <button id="newApiKey" class="w-full p-2 rounded bg-slate-900 border border-line text-sm">Generar API key</button>
+        <button id="sendWhatsapp" class="w-full p-2 rounded bg-slate-900 border border-line text-sm">Enviar HSM WhatsApp</button>
+        <ul id="integrationList" class="text-xs space-y-1"></ul>
+      </article>
+
+      <article class="bg-card border border-line rounded-xl p-4 space-y-3">
+        <div class="flex justify-between items-center">
+          <h2 class="font-semibold">Auditoría + Export</h2>
+          <button id="exportJSON" class="text-xs px-3 py-1 rounded bg-slate-900 border border-line">JSON</button>
+        </div>
+        <button id="exportCSV" class="w-full text-xs p-2 rounded bg-slate-900 border border-line">CSV oportunidades</button>
+        <ul id="activityLog" class="text-xs space-y-2 max-h-44 overflow-auto"></ul>
+      </article>
+    </section>
+  </main>
+
+  <div id="palette" class="hidden fixed inset-0 bg-black/60 items-start justify-center pt-24 px-4">
+    <div class="w-full max-w-xl bg-card border border-line rounded-xl p-3">
+      <input id="cmdInput" class="w-full bg-slate-900 border border-line rounded p-2 text-sm" placeholder="Comando: new lead | stale | finance | invoices | whatsapp | export" />
+      <p class="text-xs text-slate-400 mt-2">Keyboard-first: Cmd/Ctrl+K</p>
+    </div>
+  </div>
+
+  <script src="crm.js"></script>
+</body>
+</html>
